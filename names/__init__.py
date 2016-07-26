@@ -16,6 +16,7 @@ FILES = {
     'first:male': full_path('dist.male.first'),
     'first:female': full_path('dist.female.first'),
     'last': full_path('dist.all.last'),
+    'domain': full_path('dist.all.mail'),
 }
 
 
@@ -43,3 +44,9 @@ def get_last_name():
 
 def get_full_name(gender=None):
     return "{0} {1}".format(get_first_name(gender), get_last_name())
+
+def get_domain_name():
+    return get_name(FILES['domain']).lower()
+
+def get_mail_address():
+    return "{0}.{1}@{2}".format(get_first_name(gender), get_last_name(), get_domain_name)
